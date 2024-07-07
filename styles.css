@@ -15,6 +15,10 @@ header {
     padding: 1rem 0;
     text-align: center;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000; /* Ensure it's above other content */
 }
 
 nav ul {
@@ -44,7 +48,7 @@ nav ul li a:hover {
 section {
     padding: 4rem 2rem;
     text-align: center;
-    margin: 2rem auto;
+    margin: 2rem auto; /* Added space between header and section */
     max-width: 900px;
 }
 
