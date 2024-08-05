@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harini K's Portfolio</title>
+    <title>Harini K Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <header>
         <nav>
+            <div class="menu-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
             <ul>
                 <!-- <li><a href="#home">Home</a></li> -->
                 <li><a href="#about-modal">About</a></li>
@@ -29,7 +34,7 @@
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
             margin: 0;
             padding: 0;
-            background-image: url('https://raw.githubusercontent.com/harinik2002/HARINI-PORTFOLIO/master/bg.jpg');  /* Path to your image */
+            background-image: url('https://raw.githubusercontent.com/harinik2002/HARINI-PORTFOLIO/master/bg.jpg'); /* Path to your image */
             background-size: cover; /* Cover the entire viewport */
             background-position: center; /* Center the background image */
             background-repeat: no-repeat; /* Prevent the image from repeating */
@@ -77,16 +82,44 @@
             color: #e0e0e0; /* Slightly lighter text color for contrast */
         }
 
+        /* Header styles */
         header {
-            background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
-            padding: 15px 0;
+            background-color: rgba(44, 62, 80, 0.8);
+            padding: 15px 20px;
             position: fixed;
             width: 100%;
-            top: 0; /* Ensure it's at the top */
-            left: 0; /* Ensure it's aligned to the left */
-            z-index: 1000; /* Ensure header is above other content */
+            top: 0;
+            left: 0;
+            z-index: 1000;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            animation: slideIn 0.5s ease-in-out;
+            display: flex;
+            justify-content: center; /* Center the navigation */
+            align-items: center;
+        }
+
+        nav {
+            width: 100%;
+            max-width: 1200px;
+            display: flex;
+            justify-content: space-between; /* Space out the menu items and toggle */
+            align-items: center;
+        }
+
+        /* Menu toggle button */
+        .menu-toggle {
+            display: none; /* Hide by default */
+            flex-direction: column;
+            cursor: pointer;
+            position: absolute;
+            left: 20px; /* Position toggle to the left */
+        }
+
+        .menu-toggle div {
+            width: 25px;
+            height: 3px;
+            background-color: white;
+            margin: 4px 0;
+            transition: all 0.3s;
         }
 
         nav ul {
@@ -94,11 +127,13 @@
             margin: 0;
             padding: 0;
             display: flex;
-            justify-content: center;
+            flex-wrap: wrap;
+            justify-content: center; /* Center navigation items */
+            width: 100%;
         }
 
         nav ul li {
-            margin: 0 20px;
+            margin: 0 10px;
         }
 
         nav ul li a {
@@ -114,6 +149,34 @@
             text-decoration: underline;
         }
 
+        /* Mobile menu toggle */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: flex; /* Show toggle button on small screens */
+            }
+
+            nav ul {
+                display: none; /* Hide the menu items by default */
+                flex-direction: column;
+                width: 100%;
+                background-color: rgba(44, 62, 80, 0.8);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                padding: 20px 0;
+                text-align: center;
+            }
+
+            nav ul.show {
+                display: flex; /* Show the menu items when toggle is active */
+            }
+
+            nav ul li {
+                margin: 10px 0;
+            }
+        }
+
+        /* Ensure menu items are centered */
         h1, h2 {
             color: #2c3e50;
             font-weight: 700;
@@ -153,16 +216,16 @@
         /* Modal content center alignment */
         .modal-content {
             background-color: #fff;
-            margin: 5% auto; /* Center horizontally */
+            margin: 5% auto;
             padding: 30px;
             border-radius: 8px;
             border: 1px solid #ccc;
-            width: 70%; /* Adjust width as needed */
-            max-width: 800px; /* Optional: limit max-width for better readability */
+            width: 90%;
+            max-width: 800px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
             transition: all 0.3s ease-in-out;
             animation: slideInRight 0.5s ease-in-out;
-            text-align: center; /* Center align text */
+            text-align: center;
         }
 
         /* Center align text and content */
@@ -200,6 +263,7 @@
 
         section {
             padding: 20px;
+            text-align: center; /* Center align section text */
         }
 
         ul.skills-list {
@@ -295,23 +359,28 @@
         }
 
         .image-hover img {
-            transition: transform 0.5s ease, filter 0.5s ease;
+            display: block;
+            transition: transform 0.5s ease;
         }
 
         .image-hover:hover img {
             transform: scale(1.1);
-            filter: brightness(80%);
         }
 
-        /* Card Flip Animation */
         .card {
+            background: #fff;
+            width: 300px;
+            height: 200px;
             perspective: 1000px;
+            margin: 20px auto;
         }
 
         .card-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
             transition: transform 0.6s;
             transform-style: preserve-3d;
-            position: relative;
         }
 
         .card:hover .card-inner {
@@ -385,39 +454,8 @@
             50% { border-color: #2c3e50 }
         }
 
-        /* Animations */
-        @keyframes slideIn {
-            from {
-                transform: translateY(-100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        @keyframes slideInUp {
-            from {
-                transform: translateY(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateY(0);
-                opacity: 1;
-            }
-        }
-
     </style>
+    
     
     <!-- Modals -->
     <section id="home">
@@ -631,6 +669,16 @@
                 }
             });
         });
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navLinks = document.querySelector('nav ul');
+
+            menuToggle.addEventListener('click', function() {
+                navLinks.classList.toggle('show');
+            });
+        });
+
 
     </script>
 </body>
