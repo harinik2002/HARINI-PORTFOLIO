@@ -1,273 +1,357 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Harini K Portfolio</title>
+    <title>Harini K - Portfolio</title>
+    <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;700&family=Oswald:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-</head>
-<body>
-    <header>
-        <nav>
-            <div class="menu-toggle">
-                <div></div>
-                <div></div>
-                <div></div>
-            </div>
-            <ul>
-                <!-- <li><a href="#home">Home</a></li> -->
-                <li><a href="#about-modal">About</a></li>
-                <li><a href="#projects-modal">Projects</a></li>
-                <li><a href="#education-modal">Education</a></li>
-                <li><a href="#skills-modal">Skills</a></li>
-                <li><a href="#certifications-modal">Certifications</a></li>
-                <li><a href="#activities-modal">Activities</a></li>
-                <li><a href="#internship-modal">Internship</a></li>
-                <li><a href="#personal-details-modal">Personal Details</a></li>
-                <li><a href="#objective-modal">Objective</a></li>
-            </ul>
-        </nav>
-    </header>
+
+    
     <style>
-        /* General styles */
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            font-family: 'Raleway', sans-serif;
+            color: #1E1E1E;
+            background-color: #F0F0F0;
             margin: 0;
             padding: 0;
-            background-image: url('https://raw.githubusercontent.com/harinik2002/HARINI-PORTFOLIO/master/bg.jpg'); 
-            background-size: cover; 
-            background-position: center; 
-            background-repeat: no-repeat; 
-            background-attachment: fixed; 
-            color: #333;
-            overflow-x: hidden;
-            padding-top: 70px;
-            padding-bottom: 60px; 
         }
 
-        /* Background overlay to lighten the background */
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(255, 255, 255, 0.3); /* Light white overlay */
-            z-index: -1; /* Ensure it's behind all content */
-        }
-
-        /* Home section styles */
-        #home {
-            text-align: center;
-            padding: 40px 20px; /* Adjusted padding to fit content size */
-            color: #fff; /* Bright text color */
-            background: rgba(44, 62, 80, 0.7); /* Semi-transparent background for better readability */
-            border-radius: 8px; /* Rounded corners for content background */
-            max-width: 800px;
-            width: 90%; /* Ensure it fits within viewport but respects content size */
-            margin: 87px auto 0; /* Centered horizontally with a top margin */
-            animation: fadeIn 1s ease-in-out;
-        }
-
-        #home h1 {
-            font-size: 48px; /* Increased font size */
-            margin-bottom: 20px;
-            color: #fff; /* Bright text color */
-        }
-
-        #home p {
-            font-size: 20px; /* Increased font size */
-            margin: 0 auto;
-            max-width: 700px;
-            color: #e0e0e0; /* Slightly lighter text color for contrast */
-        }
-
-        /* Header styles */
-        header {
-            background-color: rgba(44, 62, 80, 0.8);
-            padding: 15px 20px;
+        nav {
+            background-color: #1E1E1E;
             position: fixed;
             width: 100%;
             top: 0;
             left: 0;
             z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            display: flex;
-            justify-content: center; /* Center the navigation */
-            align-items: center;
-        }
-
-        nav {
-            width: 100%;
-            max-width: 1200px;
-            display: flex;
-            justify-content: space-between; /* Space out the menu items and toggle */
-            align-items: center;
-        }
-
-        /* Menu toggle button */
-        .menu-toggle {
-            display: none; /* Hide by default */
-            flex-direction: column;
-            cursor: pointer;
-            position: absolute;
-            left: 20px; /* Position toggle to the left */
-        }
-
-        .menu-toggle div {
-            width: 25px;
-            height: 3px;
-            background-color: white;
-            margin: 4px 0;
-            transition: all 0.3s;
+            padding: 10px 0;
         }
 
         nav ul {
-            list-style-type: none;
+            list-style: none;
+            text-align: center;
             margin: 0;
             padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center; /* Center navigation items */
-            width: 100%;
         }
 
         nav ul li {
-            margin: 0 10px;
+            display: inline-block;
+            margin: 0 15px;
         }
 
         nav ul li a {
-            color: white;
+            color: #FFFFFF;
             text-decoration: none;
+            font-weight: bold;
             font-size: 18px;
-            font-weight: 600;
             transition: color 0.3s;
         }
 
         nav ul li a:hover {
-            color: #f39c12;
-            text-decoration: underline;
+            color: #68BDCA;
         }
 
-        /* Mobile menu toggle */
+        #welcome {
+            position: relative;
+            background-color: rgba(255, 255, 255, 0.6); /* Light transparent background for content */
+            color: #1E1E1E; /* Darker text color for contrast */
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding-top: 10px;
+            overflow: hidden; /* Ensure content stays within bounds */
+        }
+
+        #welcome::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url("https://images.unsplash.com/photo-1498050108023-c5249f4df085") no-repeat center center/cover;
+            opacity: 0.5; /* Adjust opacity for desired transparency */
+            z-index: -1; /* Ensure the image stays behind content */
+        }
+
+        .container {
+            width: auto;
+            height: auto;
+            padding: 60px;
+            text-align: center;
+            background-color: rgba(248, 237, 237, 0.075);
+            border-radius: 10px;
+        }
+
+        #welcome h1 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 3.5rem; /* Responsive font size */
+            font-weight: 700;
+            letter-spacing: 1px;
+            color: rgb(15, 1, 1);
+        }
+
+        #welcome h3 {
+            font-size: 2.5rem; /* Responsive font size */
+            font-weight: 400;
+            margin-bottom: 30px;
+            color: #0e0000;
+            font-family: 'Oswald', sans-serif;
+        }
+
+        #welcome .cta-btn {
+            background-color: #134b70;
+            color: #FFFFFF;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        #welcome .cta-btn:hover {
+            background-color: #006F7A;
+        }
+
+                /* About Section */
+        #about {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: left;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        #about h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        #about p {
+            font-size: 18px;
+            line-height: 1.6;
+            color: #333333;
+            margin-bottom: 20px; /* Adjust the value as needed */
+        }
+
+         /* Project Section */
+         #project {
+            background-color: #F0F0F0;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #project h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        .project-item {
+            display: inline-block;
+            margin: 20px;
+            width: 300px;
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+        }
+
+        .project-item:hover {
+            transform: scale(1.05);
+        }
+
+        .project-item img {
+            width: 100%;
+            height: auto;
+            border-bottom: 2px solid #68BDCA;
+        }
+
+        .project-item h3 {
+            font-size: 24px;
+            margin: 15px 0;
+            padding: 0 15px;
+            font-weight: 700;
+            color: #1E1E1E;
+        }
+
+        .project-item p {
+            font-size: 16px;
+            color: #333333;
+            padding: 0 15px 20px;
+            line-height: 1.6;
+        }
+
+        /* Education Section */
+        #education {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #education h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 40px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        /* Timeline Container */
+        .timeline {
+            position: relative;
+            margin: 0 auto;
+            padding: 20px 0;
+            max-width: 800px;
+            text-align: left;
+        }
+
+        /* Timeline Line */
+        .timeline::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background-color: #68BDCA;
+            left: 50%;
+            margin-left: -2px;
+        }
+
+        /* Timeline Items */
+        .timeline-item {
+            position: relative;
+            width: 50%;
+            padding: 20px;
+            box-sizing: border-box;
+            margin-bottom: 40px;
+        }
+
+        /* Align odd and even items */
+        .timeline-item:nth-child(odd) {
+            left: 0;
+            text-align: right;
+        }
+
+        .timeline-item:nth-child(even) {
+            left: 50%;
+            text-align: left;
+        }
+
+        /* Timeline Item Dot */
+        .timeline-item::before {
+            content: '';
+            position: absolute;
+            top: 15px;
+            width: 20px;
+            height: 20px;
+            background-color: #68BDCA;
+            border-radius: 50%;
+            z-index: 1;
+        }
+
+        /* Positioning dots */
+        .timeline-item:nth-child(odd)::before {
+            left: -10px;
+        }
+
+        .timeline-item:nth-child(even)::before {
+            right: -10px;
+        }
+
+        /* Timeline Date */
+        .timeline-date {
+            font-size: 16px;
+            color: #999999;
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            top: -25px; /* Adjust to align properly with the line */
+        }
+
+        /* Adjust alignment of dates */
+        .timeline-item:nth-child(odd) .timeline-date {
+            left: calc(50% - 70px); /* Adjust as needed */
+        }
+
+        .timeline-item:nth-child(even) .timeline-date {
+            left: calc(50% + 10px); /* Adjust as needed */
+        }
+
+        /* Timeline Content */
+        .timeline-content {
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            padding: 20px;
+            border-radius: 8px;
+            position: relative;
+        }
+
+        /* Content Heading */
+        .timeline-content h3 {
+            font-size: 24px;
+            margin: 0;
+            color: #1E1E1E;
+        }
+
+        /* Content Paragraph */
+        .timeline-content p {
+            font-size: 18px;
+            color: #333333;
+            margin: 5px 0;
+        }
+
+        /* Responsive Adjustments */
         @media (max-width: 768px) {
-            .menu-toggle {
-                display: flex; /* Show toggle button on small screens */
+            .timeline-item {
+                width: 100%;
+                padding: 10px;
+                text-align: center;
+                position: relative; /* Ensure proper stacking on small screens */
             }
 
-            nav ul {
-                display: none; /* Hide the menu items by default */
-                flex-direction: column;
-                width: 100%;
-                background-color: rgba(44, 62, 80, 0.8);
-                position: absolute;
-                top: 60px;
+            .timeline-item::before {
+                display: none;
+            }
+
+            .timeline::before {
+                display: none;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
                 left: 0;
-                padding: 20px 0;
                 text-align: center;
             }
 
-            nav ul.show {
-                display: flex; /* Show the menu items when toggle is active */
-            }
-
-            nav ul li {
-                margin: 10px 0;
+            .timeline-date {
+                position: static;
+                margin-bottom: 10px;
+                top: auto;
             }
         }
 
-        /* Ensure menu items are centered */
-        h1, h2 {
-            color: #2c3e50;
-            font-weight: 700;
+        #skills {
+            background-color: #F0F0F0;
+            padding: 60px 20px;
             text-align: center;
-            margin: 20px 0;
         }
 
-        h1 {
-            margin-top: 27px;
+        #skills h2 {
+            font-family: 'Oswald', sans-serif;
             font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
         }
 
-        h2 {
-            margin-top: 0;
-            font-size: 28px;
-        }
-
-        p {
-            line-height: 1.6;
-            margin: 10px 0;
-        }
-
-        /* Modal styles */
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 2000; /* Higher than footer */
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            overflow: auto;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding-top: 60px;
-        }
-
-        /* Modal content center alignment */
-        .modal-content {
-            background-color: #fff;
-            margin: 5% auto;
-            padding: 30px;
-            border-radius: 8px;
-            border: 1px solid #ccc;
-            width: 90%;
-            max-width: 800px;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-            transition: all 0.3s ease-in-out;
-            animation: slideInRight 0.5s ease-in-out;
-            text-align: center;
-        }
-
-        /* Center align text and content */
-        .modal-content h2, .modal-content p, .modal-content ul {
-            text-align: center;
-            margin: 0 auto;
-            max-width: 90%;
-        }
-
-        /* Adjust the list style to be centered */
-        .modal-content ul {
-            list-style: none;
-            padding: 0;
-            margin: 20px 0;
-        }
-
-        .modal-content ul li {
-            margin: 10px 0;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.3s;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #e74c3c;
-            text-decoration: none;
-        }
-
-        section {
-            padding: 20px;
-            text-align: center; /* Center align section text */
-        }
-
-        ul.skills-list {
+        .skills-list {
             list-style: none;
             padding: 0;
             display: flex;
@@ -275,283 +359,453 @@
             justify-content: center;
         }
 
-        ul.skills-list li {
+        .skills-list li {
             margin: 10px 20px;
             font-size: 18px;
+            color: #333333;
         }
 
-        .skills-list i {
+        .skills-list li i {
             margin-right: 8px;
-            color: #2c3e50;
+            color: #68BDCA;
         }
 
-        .project, .education-item, .internship-item {
-            margin-bottom: 30px;
-        }
 
-        footer {
-            background-color: rgba(44, 62, 80, 0.8); /* Semi-transparent background */
-            color: white;
+
+
+        /* Activities Section */
+        #activities {
+            background-color: #F0F0F0;
+            padding: 60px 20px;
             text-align: center;
-            padding: 15px 0;
-            position: fixed;
-            bottom: 0;
-            width: 100%;
-            z-index: 1000; /* Ensure footer is below modal */
         }
 
-        /* Specific element styles */
-        a {
-            color: #2c3e50;
+        #activities h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        .activity-item {
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin: 86px auto;
+            padding: 67px;
+            max-width: 600px;
+        }
+
+        .activity-item h3 {
+            font-size: 24px;
+            margin: 0;
+            color: #1E1E1E;
+        }
+
+        .activity-item p {
+            font-size: 18px;
+            color: #333333;
+            margin: 5px 0;
+        }
+
+        /* Objective Section */
+        #objective {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #objective h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        #objective p {
+            font-size: 18px;
+            color: #333333;
+            line-height: 1.6;
+        }
+
+        /* Certifications Section */
+        #certifications {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #certifications h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        .certifications-list {
+            list-style: none;
+            padding: 0;
+            font-size: 18px;
+            color: #333333;
+        }
+
+        .certifications-list li {
+            margin: 5px 0;
+        }
+
+        /* Contact Section */
+        #contact {
+            background-color: #1E1E1E;
+            color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #contact h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        #contact p {
+            font-size: 18px;
+            margin: 10px 0;
+        }
+
+        #contact a {
+            color: #68BDCA;
             text-decoration: none;
+            font-weight: bold;
             transition: color 0.3s;
         }
 
-        a:hover {
-            color: #f39c12;
+        #contact a:hover {
+            color: #006F7A;
         }
 
-        strong {
-            color: #2c3e50;
-        }
-
-        li {
-            line-height: 1.8;
-        }
-
-        /* Button Hover Animation */
-        button {
-            background-color: #2c3e50;
-            color: white;
-            border: none;
+        /* Footer */
+        footer {
+            background-color: #1E1E1E;
+            color: #FFFFFF;
             padding: 10px 20px;
-            border-radius: 5px;
+            text-align: center;
+        }
+        /* Internships Section */
+        #internships {
+            background-color: #FFFFFF;
+            padding: 60px 20px;
+            text-align: center;
+        }
+
+        #internships h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px;
+            border-bottom: 3px solid #68BDCA;
+            display: inline-block;
+        }
+
+        .internship-item {
+            background-color: #FFFFFF;
+            box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.1);
+            margin: 86px auto;
+            padding: 67px;
+            max-width: 600px;
+        }
+
+        .internship-item h3 {
+            font-size: 24px;
+            margin: 0;
+            color: #1E1E1E;
+        }
+
+        .internship-item p {
+            font-size: 18px;
+            color: #333333;
+            margin: 5px 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        #openmenu {
+            /* font-family: 'Amatic SC', cursive; */
+            font-size: 20pt;
+            color: #0c0c0c; 
+            background-color: #68bdca00;
+            border-bottom: solid 2px rgba(255, 255, 255, 0);
+            border-right: solid 2px rgba(255, 255, 255, 0);
+            position: fixed;
+            padding: 2px;
+            width: 10%;
+            text-align: center;
+            top: 0;
+            left: 0;
+            transition: width 0.5s;
+            margin-top: 10px;
+        }
+        
+        #openmenu:hover {
+            width: 15%;
+            transition: width 0.5s;
             cursor: pointer;
-            font-size: 16px;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
-
-        button:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+        
+        .overlay {
+            height: 100%;
+            width: 0;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            background-color: rgba(16, 16, 16, 0.9);
+            overflow-x: hidden;
+            transition: 0.5s;
         }
-
-        /* Fade-in Effect for Sections */
-        .section-fade-in {
-            opacity: 0;
-            animation: fadeInSection 1s forwards;
-        }
-
-        @keyframes fadeInSection {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        /* Image Hover Effect */
-        .image-hover {
-            overflow: hidden;
+        
+        .overlay-content {
             position: relative;
+            top: 10%;
+            width: 100%;
+            text-align: center;
+            margin-top: 30px;
         }
-
-        .image-hover img {
+        
+        .overlay a {
+            padding: 8px;
+            text-decoration: none;
+            font-size: 20px;
+            color: #818181;
             display: block;
-            transition: transform 0.5s ease;
+            transition: 0.3s;
         }
-
-        .image-hover:hover img {
-            transform: scale(1.1);
+        
+        .overlay a:hover,
+        .overlay a:focus {
+            color: #f1f1f1;
         }
-
-        .card {
-            background: #fff;
-            width: 300px;
-            height: 200px;
-            perspective: 1000px;
-            margin: 20px auto;
-        }
-
-        .card-inner {
-            position: relative;
-            width: 100%;
-            height: 100%;
-            transition: transform 0.6s;
-            transform-style: preserve-3d;
-        }
-
-        .card:hover .card-inner {
-            transform: rotateY(180deg);
-        }
-
-        .card-front, .card-back {
-            backface-visibility: hidden;
+        
+        .closebtn {
             position: absolute;
+            top: 20px;
+            right: 45px;
+            font-size: 60px !important;
+        }
+        
+        @media screen and (max-height: 450px) {
+            .overlay a {
+            font-size: 20px
+            }
+            .closebtn {
+            font-size: 40px !important;
+            top: 15px;
+            right: 35px;
+            }
+        }
+        .cta-btn {
+            background-color: #134b70;
+            color: #FFFFFF;
+            padding: 12px 25px;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 25px;
+            transition: background-color 0.3s;
+        }
+
+        .cta-btn:hover {
+            background-color: #0f3b5c; /* Darker shade for hover effect */
+        }
+
+        .project-item {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .project-image {
             width: 100%;
-            height: 100%;
+            height: 200px; /* Adjust height as needed */
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            margin-bottom: 10px; /* Space between the image and the content */
         }
 
-        .card-front {
-            background: #ffffff;
+        h3 {
+            margin-top: 0;
         }
 
-        .card-back {
-            background: #2c3e50;
-            color: white;
-            transform: rotateY(180deg);
+        p {
+            margin: 0;
         }
 
-        /* Loading Spinner */
-        .spinner {
-            border: 8px solid #f3f3f3; /* Light grey */
-            border-top: 8px solid #2c3e50; /* Darker color */
-            border-radius: 50%;
-            width: 50px;
-            height: 50px;
-            animation: spin 1s linear infinite;
+        /* Personal Details Section */
+        #personal-details {
+            background-color: #F0F0F0; 
+            padding: 60px 20px; 
+            text-align: center;
         }
 
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
+        #personal-details h2 {
+            font-family: 'Oswald', sans-serif;
+            font-size: 36px;
+            margin-bottom: 20px; 
+            border-bottom: 3px solid #68BDCA; 
+            display: inline-block; 
         }
 
-        /* Slide-in Effect for Modals */
-        @keyframes slideInRight {
-            from {
-                transform: translateX(100%);
-                opacity: 0;
-            }
-            to {
-                transform: translateX(0);
-                opacity: 1;
-            }
+        .personal-details-list {
+            list-style: none; 
+            padding: 0;
+            font-size: 18px; 
+            color: #333333; 
         }
 
-        .modal-content {
-            animation: slideInRight 0.5s ease-in-out;
+        .personal-details-list li {
+            margin: 5px 0; 
         }
 
-        /* Text Typing Effect */
-        .typing {
-            font-family: 'Courier New', Courier, monospace;
-            white-space: nowrap;
-            overflow: hidden;
-            border-right: .15em solid #2c3e50;
-            animation: typing 4s steps(40, end), blink-caret .75s step-end infinite;
+        .personal-details-list strong {
+            color: #1E1E1E; 
         }
 
-        @keyframes typing {
-            from { width: 0 }
-            to { width: 100% }
-        }
 
-        @keyframes blink-caret {
-            from, to { border-color: transparent }
-            50% { border-color: #2c3e50 }
-        }
 
     </style>
-    
-    
-    <!-- Modals -->
-    <section id="home">
-        <h1>Welcome to My Portfolio</h1>
-        <p>Hello! I'm Harini K, a passionate Software Engineer with experience in full-stack development and Pega Certified Senior System Architect. Explore my projects and professional journey!</p>
+</head>
+
+<body>
+    <div id="myNav" class="overlay">
+
+        <!-- Button to close the overlay navigation -->
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+      
+        <!-- Overlay content -->
+        <div class="overlay-content">
+          <a class="smoothScroll" href="#welcome" onclick="closeNav()">Home</a>
+          <a class="smoothScroll" href="#about" onclick="closeNav()">About</a>
+          <a class="smoothScroll" href="#project" onclick="closeNav()">Projects</a>
+          <a class="smoothScroll" href="#education" onclick="closeNav()">Education</a>
+          <a class="smoothScroll" href="#skills" onclick="closeNav()">Skills</a>
+          <a class="smoothScroll" href="#internships" onclick="closeNav()">Internships</a>
+          <a class="smoothScroll" href="#activities" onclick="closeNav()">Activities</a>
+          <a class="smoothScroll" href="#certifications" onclick="closeNav()">Certifications</a>
+          <a class="smoothScroll" href="#personal-details" onclick="closeNav()">Personal Details</a>
+          <a class="smoothScroll" href="#objective" onclick="closeNav()">Objective</a>
+          <a class="smoothScroll" href="#contact" onclick="closeNav()">Contact</a>
+        </div>
+      
+      </div>
+
+
+    <!-- Welcome Section -->
+    <section id="welcome">
+        <span id="openmenu" onclick="openNav()" title="Open Menu">
+            <i class="fas fa-bars" style="font-size: 40px;"></i>
+          </span>
+        <div class="container">
+
+            <div class="welcome-item">
+                <h1>Hi, I'm Harini K</h1> 
+                <h3>Full Stack Developer & PEGA Certified Senior System Architect</h3> 
+                <a href="#contact" class="cta-btn">Contact Me</a>
+
+            </div>
+        </div>
+    </section>
+
+
+    <section id="about">
+        <h2>About Me</h2>
+        <p>
+            I am a Software Engineer with a solid background in Electronics and Communication Engineering, graduated with an 8.59 CGPA. My internships at Zaaroz Services and Virtusa have strengthened my expertise across multiple programming languages and frameworks, shaping me into a versatile and adaptive developer.
+
+        </p>
+        <a href="https://drive.google.com/file/d/11oXM1qVefqP-Y6w2l-R0gfbWW5RKgLn-/view?usp=sharing" download="Harini_K_CV" target="_blank"  class="cta-btn">Download My CV</a>
     </section>
     
-    <div id="about-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="about">
-                <h2>About Me</h2>
-                <p>I am a driven Software Engineer with a strong foundation in Electronics and Communication Engineering, graduated from Sri Sairam Institute Of Technology with an 8.59 CGPA. My journey in technology has been fueled by internships at Zaaroz Services Private Limited and Virtusa Consulting Services Pvt Ltd, where I honed my skills in various programming languages and frameworks.</p>
-                <ul>
-                    <li><strong>Email:</strong> <a href="mailto:harinikathiravan2002@gmail.com" style="color: #3b055d;"><i class="fas fa-envelope"></i> harinikathiravan2002@gmail.com</a></li>
-                    <li><strong>Phone:</strong> <i class="fas fa-phone"></i> 8248365290</li>
-                    <li><strong>Location:</strong> <i class="fas fa-map-marker-alt"></i> Chennai</li>
-                    <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/harini-k-9973a21b0/" style="color: #3b055d;"><i class="fab fa-linkedin"></i> Harini K</a></li>
-                </ul>
-            </section>
-        </div>
-    </div>
 
-    <div id="projects-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="projects">
-                <h2>My Projects</h2>
-                <div class="project">
-                    <h3>Zaaroz HelpDesk Application</h3>
-                    <p>Designed and implemented a comprehensive ticketing system with robust API integrations and automated email processes, streamlining issue tracking and communication for customer support teams. Enhanced user interface and experience by integrating interactive elements. Developed and integrated a live chat feature for real-time employee communication, significantly improving collaboration and efficiency within the support team.</p>
-                    <p><strong>Technologies:</strong> PHP, MySQL, JavaScript, HTML, CSS | Laravel</p>
-                </div>
-                <div class="project">
-                    <h3>Product Warranty Claim Application</h3>
-                    <p>Contributed to the development and implementation of an automated warranty handling system for XYZ retail during an internship at Virtusa, using Pega technology. Enabled seamless claim requests, approvals, and technician scheduling, ensuring prompt resolution of product issues. Integrated roles such as Warranty Claim Manager, Technician, and Delivery Person for swift decision-making and effective product handling.</p>
-                    <p><strong>Technologies:</strong> Pega</p>
-                </div>
-                <div class="project">
-                    <h3>Hospital Appointment Booking Application (CARE 24X7)</h3>
-                    <p>Developed an innovative healthcare platform using Pega technology. Prioritized seamless connectivity for patients to healthcare services, including doctor appointments, test bookings, medication procurement, and health record management. Facilitated healthcare providers in expanding their reach and enhancing patient engagement through the platform.</p>
-                    <p><strong>Technologies:</strong> Pega</p>
-                </div>
-            </section>
+    <section id="project">
+        <h2>Projects</h2>
+    
+        <div class="project-item">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/harinik2002/HARINI-PORTFOLIO/master/helpdesk.jpg');"></div>
+            <h3>Zaaroz HelpDesk Application</h3>
+            <p>Designed and implemented a comprehensive ticketing system with Email integration, API integrations, and live chat features, improving customer support efficiency.</p>
         </div>
-    </div>
+    
+        <div class="project-item">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/harinik2002/HARINI-PORTFOLIO/master/warranty%20claim1.jpg');"></div>
+            <h3>Product Warranty Claim Application</h3>
+            <p>Developed an automated warranty handling system for XYZ retail during my internship at Virtusa, using Pega technology.</p>
+        </div>
+    
+        <div class="project-item">
+            <div class="project-image" style="background-image: url('https://raw.githubusercontent.com/harinik2002/HARINI-PORTFOLIO/master/appoint%20app.jpg');"></div>
+            <h3>Hospital Appointment Booking (CARE 24X7)</h3>
+            <p>Developed a healthcare platform using Pega, connecting patients with healthcare services efficiently.</p>
+        </div>
+    </section>
+    
 
-    <div id="education-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="education">
-                <h2>Education</h2>
-                <div class="education-item">
-                    <h3>Electronics And Communication Engineering</h3>
-                    <p>Sri Sairam Institute Of Technology</p>
-                    <p>2019 - 2023</p>
-                    <p><strong>CGPA:</strong> 8.59</p>
+    <section id="education">
+        <h2>Education</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">2019 - 2023</div>
+                <div class="timeline-content">
+                    <h3>Bachelor of Engineering in Electronics and Communication Engineering</h3>
+                    <p>Sri Sairam Institute of Technology</p>
+                    <p>CGPA: 8.59</p>
                 </div>
-                <div class="education-item">
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2019</div>
+                <div class="timeline-content">
                     <h3>High School</h3>
                     <p>Zion Matriculation Higher Secondary School</p>
-                    <p>2019</p>
-                    <p><strong>Percentage:</strong> 75.67%</p>
+                    <p>Percentage: 75.67%</p>
                 </div>
-                <div class="education-item">
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">2017</div>
+                <div class="timeline-content">
                     <h3>Secondary School</h3>
                     <p>Zion Matriculation Higher Secondary School</p>
-                    <p>2017</p>
-                    <p><strong>Percentage:</strong> 95%</p>
+                    <p>Percentage: 95.2%</p>
                 </div>
-            </section>
+            </div>
         </div>
-    </div>
+    </section>
+    
 
-    <div id="skills-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="skills">
-                <h2>Technical Skills</h2>
-                <ul class="skills-list">
-                    <li><i class="fab fa-python"></i> Python</li>
-                    <li><i class="fab fa-java"></i> Java</li>
-                    <li><i class="fab fa-js"></i> JavaScript</li>
-                    <li><i class="fab fa-html5"></i> HTML</li>
-                    <li><i class="fab fa-css3-alt"></i> CSS</li>
-                    <li><i class="fas fa-database"></i> SQL</li>
-                    <li><i class="fab fa-php"></i> PHP</li>
-                    <li><i class="fab fa-laravel"></i> Laravel</li>
-                    <li><i class="fas fa-cogs"></i> Pega</li>
-                    <li><i class="fas fa-desktop"></i> Visual Studio</li>
-                    <li><i class="fab fa-windows"></i> Windows</li>
-                    <li><i class="fab fa-aws"></i> AWS EC2</li>
-                    <li><i class="fab fa-aws"></i> AWS S3</li>
-                </ul>
-                <h2>Personal Skills</h2>
+    <!-- Skills Modal -->
+    <section id="skills">
+        <h2> Technical Skills</h2>
+        <ul class="skills-list">
+            <li><i class="fab fa-python"></i> Python</li>
+            <li><i class="fab fa-java"></i> Java</li>
+            <li><i class="fab fa-js"></i> JavaScript</li>
+            <li><i class="fab fa-html5"></i> HTML</li>
+            <li><i class="fab fa-css3-alt"></i> CSS</li>
+            <li><i class="fas fa-database"></i> SQL</li>
+            <li><i class="fab fa-php"></i> PHP</li>
+            <li><i class="fab fa-laravel"></i> Laravel</li>
+            <li><i class="fas fa-cogs"></i> Pega</li>
+            <li><i class="fab fa-windows"></i> Windows</li>
+            <li><i class="fab fa-aws"></i> AWS EC2</li>
+            <li><i class="fab fa-aws"></i> AWS S3</li>
+            <li><i class="fab fa-github"></i> Github</li>
+            <li><i class="fas fa-code"></i> Visual Studio Code</li>
+
+
+
+        </ul>
+        <h2>Personal Skills</h2>
                 <ul class="skills-list">
                     <li><i class="fas fa-adjust"></i> Adaptability</li>
                     <li><i class="fas fa-headphones"></i> Active Listening</li>
@@ -560,127 +814,142 @@
                     <li><i class="fas fa-comments"></i> Interpersonal Communication</li>
                     <li><i class="fas fa-users"></i> Teamwork</li>
                 </ul>
-            </section>
-        </div>
-    </div>
+    </section>
 
-    <div id="certifications-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="certifications">
-                <h2>Certifications</h2>
-                <ul>
-                    <li>PEGA Certified Senior System Architect | Pega Systems</li>
-                    <li>The Complete JavaScript Course 2023: From Zero to Expert! | Udemy</li>
-                    <li>Red Hat Certified System Administrator | RedHat Linux</li>
-                    <li>HTML & CSS Course | Progate</li>
-                </ul>
-            </section>
-        </div>
-    </div>
-
-    <div id="activities-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="activities">
-                <h2>Activities</h2>
-                <p>Led a team in the three-day hackathon series "Error by Night," organized by IEEE societies at St. Joseph Institute of Technology.</p>
-                <p>Participated in "Ideathon" organized by Sairam Robotics Club as a team lead.</p>
-            </section>
-        </div>
-    </div>
-
-    <div id="internship-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="internship">
-                <h2>Internship</h2>
-                <div class="internship-item">
-                    <h3>Software Engineer Intern</h3>
-                    <p><strong>Zaaroz Services Private Limited</strong></p>
-                    <p><strong>Duration:</strong> Feb 2024 - May 2024</p>
-                    <p>During my internship at Zaaroz, I significantly enhanced the Helpdesk Ticketing applications with API integration, chat features, mobile app integration using Laravel PHP, JavaScript, CSS, HTML, and jQuery. Additionally, I optimized MYSQL databases and automated email workflows to boost customer support efficiency.</p>
-                </div>
-                <div class="internship-item">
-                    <h3>Pega Intern Delivery</h3>
-                    <p><strong>Virtusa Consulting Services Pvt Ltd</strong></p>
-                    <p><strong>Duration:</strong> Jan 2023 - Apr 2023</p>
-                    <p>During my internship at Virtusa, I actively contributed to a team project focused on developing a Product Warranty Claim Application using Pega.</p>
-                </div>
-            </section>
-        </div>
-    </div>
-
-    <div id="personal-details-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="personal-details">
-                <h2>Personal Details</h2>
-                <ul>
-                    <li><strong>Date of Birth:</strong> 06.08.2002</li>
-                    <li><strong>Nationality:</strong> Indian</li>
-                    <li><strong>Gender:</strong> Female</li>
-                    <li><strong>Hobbies:</strong> Drawing, Painting, Photography, Sports, Traveling, Listening to music, Crafting</li>
-                    <li><strong>Languages:</strong> Tamil, English</li>
-                </ul>
-            </section>
-        </div>
-    </div>
-
-    <div id="objective-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <section id="objective">
-                <h2>Objective</h2>
-                <p>To work in an environment which encourages me to succeed and grow professionally where I can utilize my skills and knowledge appropriately.</p>
-            </section>
-        </div>
-    </div>
     
+    <section id="internships">
+        <h2>Internships</h2>
+        <div class="internship-item">
+            <h3>Zaaroz Services Private Limited</h3>
+            <p><strong>Role:</strong> Software Engineering Intern</p>
+            <p><strong>Duration:</strong> February 2024 - May 2024</p>
+            <p>Significantly enhanced the Helpdesk Ticketing applications with API integration, chat features using Laravel PHP, JavaScript, CSS, HTML, and jQuery. Implemented notable features such as chat integration, file sharing, seen indicators, and listing recent chat persons first. Optimized MYSQL databases, automated email workflows, integrated email functionalities, and used AWS S3 for file storage to boost customer support efficiency.</p>
+        </div>
+        <div class="internship-item">
+            <h3>Virtusa Consulting Services Pvt Ltd</h3>
+            <p><strong>Role:</strong> PEGA Intern</p>
+            <p><strong>Duration:</strong> January 2023 - April 2023</p>
+            <p>Contributed to a team project that focused on the development of a Product Warranty Claim Application using Pega technology. My role involved designing and implementing features that streamlined the warranty claim process, including automated claim requests, approval workflows, and technician scheduling. This work significantly improved the efficiency of warranty handling and ensured a smoother experience for both customers and technicians.</p>
+
+        </div>
+    </section>
+    
+    <section id="activities">
+        <h2>Activities</h2>
+        <div class="activity-item">
+            <h3>Team Lead - Error by Night Hackathon</h3>
+            <p>Lead a team in the three-day hackathon series organized by IEEE societies at St. Joseph Institute of Technology.</p>
+        </div>
+        <div class="activity-item">
+            <h3>Team Lead - Ideathon</h3>
+            <p>Participated in 'Ideathon' organized by Sairam Robotics Club as a team lead, focusing on innovative solutions and technology.</p>
+        </div>
+    </section>
+    
+
+    
+
+    <section id="certifications">
+        <h2>Certifications</h2>
+        <ul class="certifications-list">
+            <li>PEGA Certified Senior System Architect</li>
+            <li>The Complete JavaScript Course 2023: From Zero to Expert! (Udemy)</li>
+            <li>Red Hat Certified System Administrator (RedHat Linux)</li>
+            <li>HTML & CSS Course (Progate)</li>
+        </ul>
+    </section>
+    <section id="personal-details">
+        <h2>Personal Details</h2>
+        <ul class="personal-details-list">
+            <li><strong>Date of Birth:</strong> August 6, 2002</li>
+            <li><strong>Nationality:</strong> Indian</li>
+            <li><strong>Gender:</strong> Female</li>
+            <li><strong>Languages:</strong> English, Tamil</li>
+            <li><strong>Interests:</strong> Photography, Traveling, Crafting, Painting, Sports</li>
+        </ul>
+    </section>
+    <section id="objective">
+        <h2>Objective</h2>
+        <p>Looking for a role in a growth-focused environment where I can utilize my skills. I’m committed to delivering sincere, goal-oriented results for the organization.</p>
+    </section>
+
+    <section id="contact">
+        <h2>Contact</h2>
+        <p>
+            Feel free to reach out to me via email at 
+            <a href="mailto:harinikathiravan2002@gmail.com">
+              <i class="fas fa-envelope"></i> harinikathiravan2002@gmail.com
+            </a> 
+            or call me at 
+            <a href="tel:8248365290">
+              <i class="fas fa-phone"></i> 8248365290
+            </a>.
+          </p>
+          <p>
+            Connect with me on 
+            <a href="https://www.linkedin.com/in/harini-k-9973a21b0/" target="_blank" >
+              <i class="fab fa-linkedin"></i> LinkedIn
+            </a>.
+          </p>
+          <p>
+            <i class="fas fa-map-marker-alt"></i> Chennai, Tamil Nadu, India
+          </p>
+          
+          
+    </section>
+
     <footer>
-        <p>&copy; 2024 Harini K Portfolio</p>
+        <p>&copy; 2024 Harini K. All rights reserved.</p>
     </footer>
-
     <script>
-
-        document.addEventListener("DOMContentLoaded", () => {
-            const modalLinks = document.querySelectorAll("nav ul li a");
-            const modals = document.querySelectorAll(".modal");
-            const closeButtons = document.querySelectorAll(".close");
-
-            modalLinks.forEach(link => {
-                link.addEventListener("click", (event) => {
-                    event.preventDefault();
-                    const modalId = link.getAttribute("href").substring(1);
-                    document.getElementById(modalId).style.display = "block";
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
                 });
             });
-
-            closeButtons.forEach(button => {
-                button.addEventListener("click", () => {
-                    modals.forEach(modal => {
-                        modal.style.display = "none";
-                    });
-                });
-            });
-
-            window.addEventListener("click", (event) => {
-                if (event.target.classList.contains("modal")) {
-                    event.target.style.display = "none";
+        });
+        
+        // Function to open the overlay menu
+        function openNav() {
+            document.getElementById("myNav").style.width = "100%";
+        }
+        
+        // Function to close the overlay menu
+        function closeNav() {
+            document.getElementById("myNav").style.width = "0%";
+        }
+        
+        // jQuery for smooth scrolling (fallback for older browsers)
+        $(function() {
+            $('.smoothScroll').click(function() {
+                if (location.pathname.replace(/^\//, '') == this.pathname.replace(/^\//, '') && location.hostname == this.hostname) {
+                    var target = $(this.hash);
+                    target = target.length ? target : $('[name=' + this.hash.slice(1) + ']');
+                    if (target.length) {
+                        $('html,body').animate({
+                            scrollTop: target.offset().top
+                        }, 800); // Adjust the speed of the scroll here
+                        return false;
+                    }
                 }
             });
         });
-
-        document.addEventListener("DOMContentLoaded", function() {
-            const menuToggle = document.querySelector('.menu-toggle');
-            const navLinks = document.querySelector('nav ul');
-
-            menuToggle.addEventListener('click', function() {
-                navLinks.classList.toggle('show');
+        
+        // Scroll to the top of the page on page load
+        function scrollToTop() {
+            // Use requestAnimationFrame to ensure the scroll happens after the page has fully loaded
+            requestAnimationFrame(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             });
-        });
-
-
+        }
+        
+        // Ensure the page scrolls to the top on refresh or load
+        window.addEventListener('load', scrollToTop);
     </script>
+        
 </body>
+
 </html>
